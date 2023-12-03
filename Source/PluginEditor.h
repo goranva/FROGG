@@ -14,11 +14,11 @@
 //==============================================================================
 /**
 */
-class FinalProjectAudioProcessorEditor  :public juce::AudioProcessorEditor
+class FROGGAudioProcessorEditor  :public juce::AudioProcessorEditor
 {
 public:
-    FinalProjectAudioProcessorEditor (FinalProjectAudioProcessor&);
-    ~FinalProjectAudioProcessorEditor() override;
+    FROGGAudioProcessorEditor (FROGGAudioProcessor&);
+    ~FROGGAudioProcessorEditor() override;
 
     //==============================================================================
     void paint (juce::Graphics&) override;
@@ -27,14 +27,16 @@ public:
 private:
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
-    FinalProjectAudioProcessor& audioProcessor;
+    FROGGAudioProcessor& audioProcessor;
 
+    // Sliders:
     Slider mDryWetSlider;
     Slider mDepthSlider;
     Slider mRateSlider;
     Slider mPhaseOffsetSlider;
     Slider mFeedbackSlider;
 
+    // Labels / Text:
     Label mPluginName;
     Label mDryWetLabel;
     Label mDepthLabel;
@@ -42,10 +44,11 @@ private:
     Label mPhaseOffsetLabel;
     Label mFeedbackLabel;
 
+    // Combobox for Flanger / Chorus:
     ComboBox mType;
 
     // Background:
     juce::ImageComponent background;
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FinalProjectAudioProcessorEditor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FROGGAudioProcessorEditor)
 };

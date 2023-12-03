@@ -14,12 +14,12 @@
 //==============================================================================
 /**
 */
-class FinalProjectAudioProcessor  : public juce::AudioProcessor
+class FROGGAudioProcessor  : public juce::AudioProcessor
 {
 public:
     //==============================================================================
-    FinalProjectAudioProcessor();
-    ~FinalProjectAudioProcessor() override;
+    FROGGAudioProcessor();
+    ~FROGGAudioProcessor() override;
 
     //==============================================================================
     void prepareToPlay (double sampleRate, int samplesPerBlock) override;
@@ -59,25 +59,39 @@ private:
 
     float mDelayTimeSmoothed;
 
+    // Flanger / Chorus Parameters:
+
+    // Parameter to control mix between dry signal and wet:
     AudioParameterFloat* mDryWetParameter;
+
+    // Parameter to control the depth of the modulator, how much delay is applied to the signal:
     AudioParameterFloat* mDepthParameter;
+
+    // Parameter to control the rate of the LFO modulator, how quick the delay is applied to the signal over time:
     AudioParameterFloat* mRateParameter;
+
+    // Parameter to control the phase:
     AudioParameterFloat* mPhaseOffsetParameter;
+
+    // Parameter to control the amount of feedback applied to the delayed signal:
     AudioParameterFloat* mFeedbackParameter;
+
+    // Parameter to control the  type of modulation effect: Chorus or Flanger:
     AudioParameterInt* mTypeParameter;
 
-
+    // Circular buffer for delay of each channel:
     float* mCircularBufferLeft;
     float* mCircularBufferRight;
 
     int mCircularBufferWriteHead;
     int mCircularBufferLenght;
 
+    // Feedback to send to input:
     float mFeedbackLeft;
     float mFeedbackRight;
 
     float mLFOPhase;
 
     //==============================================================================
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FinalProjectAudioProcessor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FROGGAudioProcessor)
 };
