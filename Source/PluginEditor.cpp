@@ -38,7 +38,7 @@ FROGGAudioProcessorEditor::FROGGAudioProcessorEditor (FROGGAudioProcessor& p)
 
     // Depth Slider set up:
     AudioParameterFloat* depthParameter = (juce::AudioParameterFloat*)params.getUnchecked(1);
-    mDepthSlider.setBounds(230, 30, 60, 60);
+    mDepthSlider.setBounds(227, 30, 60, 60);
     mDepthSlider.setSliderStyle(juce::Slider::SliderStyle::RotaryVerticalDrag);
     mDepthSlider.setTextBoxStyle(juce::Slider::TextEntryBoxPosition::NoTextBox, true, 0, 0);
     mDepthSlider.setRange(depthParameter->range.start, depthParameter->range.end);
@@ -104,11 +104,11 @@ FROGGAudioProcessorEditor::FROGGAudioProcessorEditor (FROGGAudioProcessor& p)
     mType.setSelectedItemIndex(*typeParameter);
 
     // Slider colors:
-    mDryWetSlider.setColour(juce::Slider::rotarySliderFillColourId, juce::Colours::whitesmoke);
+    mDryWetSlider.setColour(juce::Slider::rotarySliderFillColourId, juce::Colours::ghostwhite);
     mDryWetSlider.setColour(juce::Slider::rotarySliderOutlineColourId, juce::Colours::whitesmoke);
     mDryWetSlider.setColour(juce::Slider::thumbColourId, juce::Colours::darkslategrey);
 
-    mDepthSlider.setColour(juce::Slider::rotarySliderFillColourId, juce::Colours::whitesmoke);
+    mDepthSlider.setColour(juce::Slider::rotarySliderFillColourId, juce::Colours::ghostwhite);
     mDepthSlider.setColour(juce::Slider::rotarySliderOutlineColourId, juce::Colours::whitesmoke);
     mDepthSlider.setColour(juce::Slider::thumbColourId, juce::Colours::darkslategrey);
 
