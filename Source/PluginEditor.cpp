@@ -16,7 +16,7 @@ FROGGAudioProcessorEditor::FROGGAudioProcessorEditor (FROGGAudioProcessor& p)
 
     // Background set up:
     auto backgroundImage = juce::ImageCache::getFromMemory(
-        BinaryData::FlangerFrogBG_png, BinaryData::FlangerFrogBG_pngSize);
+        BinaryData::FROGGBG_png, BinaryData::FROGGBG_pngSize);
     background.setImage(backgroundImage);
     background.setImagePlacement(juce::RectanglePlacement::centred);
     addAndMakeVisible(background);
@@ -86,10 +86,11 @@ FROGGAudioProcessorEditor::FROGGAudioProcessorEditor (FROGGAudioProcessor& p)
 
     // Type ComboBox set up:
     AudioParameterInt* typeParameter = (juce::AudioParameterInt*)params.getUnchecked(5);
-    mType.setBounds(13, 23, 75, 20);
-    mType.setColour(juce::ComboBox::backgroundColourId, juce::Colours::saddlebrown);
-    mType.setColour(juce::ComboBox::outlineColourId, juce::Colours::rosybrown);
-    mType.setColour(juce::ComboBox::textColourId, juce::Colours::ghostwhite);
+    mType.setBounds(15, 23, 80, 20);
+    mType.setColour(juce::ComboBox::backgroundColourId, juce::Colours::transparentBlack);
+    mType.setColour(juce::ComboBox::outlineColourId, juce::Colours::transparentBlack);
+    mType.setColour(juce::ComboBox::arrowColourId, juce::Colour(0xff401C04));
+    mType.setColour(juce::ComboBox::textColourId, juce::Colour(0xff401C04));
     mType.addItem("Chorus", 1);
     mType.addItem("Flanger", 2);
     addAndMakeVisible(mType);

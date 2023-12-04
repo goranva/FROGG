@@ -7,8 +7,7 @@
   <MAINGROUP id="Y341HN" name="FROGG">
     <GROUP id="{3EA1CE08-37F4-0C42-FDE0-4FBBACD70188}" name="Source">
       <GROUP id="{AFCE4F86-0658-44FC-54B9-57175D85DBE2}" name="Assets">
-        <FILE id="r9357f" name="FlangerFrogBG.png" compile="0" resource="1"
-              file="Source/Assets/FlangerFrogBG.png"/>
+        <FILE id="i4RdNc" name="FROGGBG.png" compile="0" resource="1" file="Source/Assets/FROGGBG.png"/>
       </GROUP>
       <FILE id="QEgKAo" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
